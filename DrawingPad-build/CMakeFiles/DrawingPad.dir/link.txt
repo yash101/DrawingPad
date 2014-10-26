@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++0x -Wall -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/DrawingPad.dir/main.cpp.o CMakeFiles/DrawingPad.dir/source/server.cxx.o CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o  -o DrawingPad  
