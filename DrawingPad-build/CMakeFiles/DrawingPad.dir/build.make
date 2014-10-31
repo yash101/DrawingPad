@@ -52,55 +52,9 @@ include CMakeFiles/DrawingPad.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/DrawingPad.dir/flags.make
 
-CMakeFiles/DrawingPad.dir/main.cpp.o: CMakeFiles/DrawingPad.dir/flags.make
-CMakeFiles/DrawingPad.dir/main.cpp.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/main.cpp.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp
-
-CMakeFiles/DrawingPad.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp > CMakeFiles/DrawingPad.dir/main.cpp.i
-
-CMakeFiles/DrawingPad.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp -o CMakeFiles/DrawingPad.dir/main.cpp.s
-
-CMakeFiles/DrawingPad.dir/main.cpp.o.requires:
-.PHONY : CMakeFiles/DrawingPad.dir/main.cpp.o.requires
-
-CMakeFiles/DrawingPad.dir/main.cpp.o.provides: CMakeFiles/DrawingPad.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/DrawingPad.dir/main.cpp.o.provides
-
-CMakeFiles/DrawingPad.dir/main.cpp.o.provides.build: CMakeFiles/DrawingPad.dir/main.cpp.o
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.o: CMakeFiles/DrawingPad.dir/flags.make
-CMakeFiles/DrawingPad.dir/source/server.cxx.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/source/server.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/source/server.cxx.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/source/server.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx > CMakeFiles/DrawingPad.dir/source/server.cxx.i
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/source/server.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx -o CMakeFiles/DrawingPad.dir/source/server.cxx.s
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires:
-.PHONY : CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides: CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
-	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides.build
-.PHONY : CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides
-
-CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides.build: CMakeFiles/DrawingPad.dir/source/server.cxx.o
-
 CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o: CMakeFiles/DrawingPad.dir/flags.make
 CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/dlib/all/source.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/dlib/all/source.cpp
 
@@ -121,18 +75,139 @@ CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o.provides: CMakeFiles/DrawingPad.
 
 CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o.provides.build: CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o
 
+CMakeFiles/DrawingPad.dir/main.cpp.o: CMakeFiles/DrawingPad.dir/flags.make
+CMakeFiles/DrawingPad.dir/main.cpp.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/main.cpp.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp
+
+CMakeFiles/DrawingPad.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp > CMakeFiles/DrawingPad.dir/main.cpp.i
+
+CMakeFiles/DrawingPad.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp -o CMakeFiles/DrawingPad.dir/main.cpp.s
+
+CMakeFiles/DrawingPad.dir/main.cpp.o.requires:
+.PHONY : CMakeFiles/DrawingPad.dir/main.cpp.o.requires
+
+CMakeFiles/DrawingPad.dir/main.cpp.o.provides: CMakeFiles/DrawingPad.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/DrawingPad.dir/main.cpp.o.provides
+
+CMakeFiles/DrawingPad.dir/main.cpp.o.provides.build: CMakeFiles/DrawingPad.dir/main.cpp.o
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o: CMakeFiles/DrawingPad.dir/flags.make
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx > CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.i
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx -o CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.s
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.requires:
+.PHONY : CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.requires
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.provides: CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.requires
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.provides.build
+.PHONY : CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.provides
+
+CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.provides.build: CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.o: CMakeFiles/DrawingPad.dir/flags.make
+CMakeFiles/DrawingPad.dir/source/server.cxx.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/source/server.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/source/server.cxx.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/source/server.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx > CMakeFiles/DrawingPad.dir/source/server.cxx.i
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/source/server.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx -o CMakeFiles/DrawingPad.dir/source/server.cxx.s
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires:
+.PHONY : CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides: CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides.build
+.PHONY : CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides
+
+CMakeFiles/DrawingPad.dir/source/server.cxx.o.provides.build: CMakeFiles/DrawingPad.dir/source/server.cxx.o
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.o: CMakeFiles/DrawingPad.dir/flags.make
+CMakeFiles/DrawingPad.dir/source/Session.cxx.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/source/Session.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/source/Session.cxx.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/source/Session.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx > CMakeFiles/DrawingPad.dir/source/Session.cxx.i
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/source/Session.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx -o CMakeFiles/DrawingPad.dir/source/Session.cxx.s
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.o.requires:
+.PHONY : CMakeFiles/DrawingPad.dir/source/Session.cxx.o.requires
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.o.provides: CMakeFiles/DrawingPad.dir/source/Session.cxx.o.requires
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Session.cxx.o.provides.build
+.PHONY : CMakeFiles/DrawingPad.dir/source/Session.cxx.o.provides
+
+CMakeFiles/DrawingPad.dir/source/Session.cxx.o.provides.build: CMakeFiles/DrawingPad.dir/source/Session.cxx.o
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o: CMakeFiles/DrawingPad.dir/flags.make
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o: /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o -c /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DrawingPad.dir/source/Terminal.cxx.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx > CMakeFiles/DrawingPad.dir/source/Terminal.cxx.i
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DrawingPad.dir/source/Terminal.cxx.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx -o CMakeFiles/DrawingPad.dir/source/Terminal.cxx.s
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.requires:
+.PHONY : CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.requires
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.provides: CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.requires
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.provides.build
+.PHONY : CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.provides
+
+CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.provides.build: CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o
+
 # Object files for target DrawingPad
 DrawingPad_OBJECTS = \
+"CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o" \
 "CMakeFiles/DrawingPad.dir/main.cpp.o" \
+"CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o" \
 "CMakeFiles/DrawingPad.dir/source/server.cxx.o" \
-"CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o"
+"CMakeFiles/DrawingPad.dir/source/Session.cxx.o" \
+"CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o"
 
 # External object files for target DrawingPad
 DrawingPad_EXTERNAL_OBJECTS =
 
-DrawingPad: CMakeFiles/DrawingPad.dir/main.cpp.o
-DrawingPad: CMakeFiles/DrawingPad.dir/source/server.cxx.o
 DrawingPad: CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o
+DrawingPad: CMakeFiles/DrawingPad.dir/main.cpp.o
+DrawingPad: CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o
+DrawingPad: CMakeFiles/DrawingPad.dir/source/server.cxx.o
+DrawingPad: CMakeFiles/DrawingPad.dir/source/Session.cxx.o
+DrawingPad: CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o
 DrawingPad: CMakeFiles/DrawingPad.dir/build.make
 DrawingPad: CMakeFiles/DrawingPad.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable DrawingPad"
@@ -142,9 +217,12 @@ DrawingPad: CMakeFiles/DrawingPad.dir/link.txt
 CMakeFiles/DrawingPad.dir/build: DrawingPad
 .PHONY : CMakeFiles/DrawingPad.dir/build
 
-CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/main.cpp.o.requires
-CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
 CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o.requires
+CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/main.cpp.o.requires
+CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o.requires
+CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/source/server.cxx.o.requires
+CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/source/Session.cxx.o.requires
+CMakeFiles/DrawingPad.dir/requires: CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o.requires
 .PHONY : CMakeFiles/DrawingPad.dir/requires
 
 CMakeFiles/DrawingPad.dir/clean:

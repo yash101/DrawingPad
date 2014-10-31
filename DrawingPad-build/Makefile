@@ -162,6 +162,78 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+source/RAMFS.o: source/RAMFS.cxx.o
+.PHONY : source/RAMFS.o
+
+# target to build an object file
+source/RAMFS.cxx.o:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o
+.PHONY : source/RAMFS.cxx.o
+
+source/RAMFS.i: source/RAMFS.cxx.i
+.PHONY : source/RAMFS.i
+
+# target to preprocess a source file
+source/RAMFS.cxx.i:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.i
+.PHONY : source/RAMFS.cxx.i
+
+source/RAMFS.s: source/RAMFS.cxx.s
+.PHONY : source/RAMFS.s
+
+# target to generate assembly for a file
+source/RAMFS.cxx.s:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.s
+.PHONY : source/RAMFS.cxx.s
+
+source/Session.o: source/Session.cxx.o
+.PHONY : source/Session.o
+
+# target to build an object file
+source/Session.cxx.o:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Session.cxx.o
+.PHONY : source/Session.cxx.o
+
+source/Session.i: source/Session.cxx.i
+.PHONY : source/Session.i
+
+# target to preprocess a source file
+source/Session.cxx.i:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Session.cxx.i
+.PHONY : source/Session.cxx.i
+
+source/Session.s: source/Session.cxx.s
+.PHONY : source/Session.s
+
+# target to generate assembly for a file
+source/Session.cxx.s:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Session.cxx.s
+.PHONY : source/Session.cxx.s
+
+source/Terminal.o: source/Terminal.cxx.o
+.PHONY : source/Terminal.o
+
+# target to build an object file
+source/Terminal.cxx.o:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o
+.PHONY : source/Terminal.cxx.o
+
+source/Terminal.i: source/Terminal.cxx.i
+.PHONY : source/Terminal.i
+
+# target to preprocess a source file
+source/Terminal.cxx.i:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Terminal.cxx.i
+.PHONY : source/Terminal.cxx.i
+
+source/Terminal.s: source/Terminal.cxx.s
+.PHONY : source/Terminal.s
+
+# target to generate assembly for a file
+source/Terminal.cxx.s:
+	$(MAKE) -f CMakeFiles/DrawingPad.dir/build.make CMakeFiles/DrawingPad.dir/source/Terminal.cxx.s
+.PHONY : source/Terminal.cxx.s
+
 source/server.o: source/server.cxx.o
 .PHONY : source/server.o
 
@@ -201,6 +273,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... source/RAMFS.o"
+	@echo "... source/RAMFS.i"
+	@echo "... source/RAMFS.s"
+	@echo "... source/Session.o"
+	@echo "... source/Session.i"
+	@echo "... source/Session.s"
+	@echo "... source/Terminal.o"
+	@echo "... source/Terminal.i"
+	@echo "... source/Terminal.s"
 	@echo "... source/server.o"
 	@echo "... source/server.i"
 	@echo "... source/server.s"

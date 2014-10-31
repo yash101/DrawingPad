@@ -1,0 +1,121 @@
+body
+{
+	background-color: black;
+	color: white;
+}
+
+#main_canvas
+{
+	background-color: #404040;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	border: 4px solid #98BF21;
+}
+
+#dbg
+{
+	position: absolute;
+	bottom: 0px;
+	height: 9%;
+	overflow-y: auto;
+	left: 0px;
+	width: 100%;
+	background-color: #98BF21;
+	color: #602571;
+	padding: 0px;
+	margin: 0px;
+}
+
+#sesname
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 80%;
+	height: 32px;
+	border: 4px solid black;
+	border-radius: 20px;
+	padding-left: 16px;
+}
+
+#mesbox
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	padding: 32px;
+	-webkit-transition: all 1s ease-in-out;
+	-webkit-transform: translate(-150%, 150%);
+	-moz-transition: all 1s ease-in-out;
+	-moz-transform: translate(-150%, 150%);
+	-ms-transition: all 1s ease-in-out;
+	-ms-transform: translate(-150%, 150%);
+	-o-transition: all 1s ease-in-out;
+	-o-transform: translate(-150%, 150%);
+	transition: all 1s ease-in-out;
+	transform: translate(-150%, 150%);
+}
+
+#mesbox_back
+{
+	opacity: 0.4;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	padding: 32px;
+	padding-top: 64px;
+}
+
+#message
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40%;
+	height: 40%;
+	background-color: black;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+	text-align: center;
+}
+
+#caption
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #98BF21;
+	text-align: center;
+	color: #602571;
+}
+
+#message_con
+{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	color: white;
+	padding: 16px;
+}
+
+#sesname:hover
+{
+	border: 4px solid #98BF21;
+}
+
+#sesname:active, #sesname:focus
+{
+	border: 4px solid red;
+}

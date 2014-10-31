@@ -72,7 +72,23 @@
       </Unit>
       <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp">
       </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx">
+      </Unit>
       <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/Pixel.hxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/RAMFS.hxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/Session.hxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/Terminal.hxx">
+      </Unit>
+      <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/definitions.hxx">
       </Unit>
       <Unit filename="/Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/server.hxx">
       </Unit>

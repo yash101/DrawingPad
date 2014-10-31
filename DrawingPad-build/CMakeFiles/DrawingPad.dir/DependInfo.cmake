@@ -6,6 +6,9 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/dlib/all/source.cpp" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/dlib/all/source.cpp.o"
   "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/main.cpp" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/main.cpp.o"
+  "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/RAMFS.cxx" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/source/RAMFS.cxx.o"
+  "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Session.cxx" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/source/Session.cxx.o"
+  "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/Terminal.cxx" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/source/Terminal.cxx.o"
   "/Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx" "/Users/student/Desktop/stuff/DrawingPad/DrawingPad-build/CMakeFiles/DrawingPad.dir/source/server.cxx.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "Clang")

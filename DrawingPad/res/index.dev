@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DrawingPad | Collaboration Could Never Be Easier!</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="/jquery.js"></script>
+		<script type="text/javascript" src="/main.js"></script>
+	</head>
+	<body>
+		<canvas id="main_canvas"></canvas>
+		<p id="dbg">Debug goes here!</p>
+		<input type="text" placeholder="Session Name" id="sesname"></input>
+		<div id="mesbox">
+			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
+			<div id="message">
+				<div id="caption">Message Box!</div>
+				<div id="message_con">No messages here yet! :)</div>
+			</div>
+		</div>
+	</body>
+</html>
