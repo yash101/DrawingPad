@@ -225,3 +225,13 @@ body
 	bottom: 4px;
 	border: 4px solid red;
 }
+
+#servcon
+{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background-color: green;
+	width: 64px;
+	height: 64px;
+}

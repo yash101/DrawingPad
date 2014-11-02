@@ -26,11 +26,17 @@ function loadAJAXPost(location, data, callback)
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function()
 	{
+		document.getElementById("servcon").style.backgroundColor = "green";
 		if(xhr.readyState = 4)
 		{
 			callback(xhr.responseText);
 		}
 	};
+
+	xhr.onerror = function()
+	{
+		document.getElementById("servcon").style.backgroundColor = "red";
+	}
 
 	xhr.open("POST", location, true);
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");

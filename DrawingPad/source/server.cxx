@@ -124,6 +124,12 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
         return ramfs::filesystem.get_file_autocache("res/presenter.png");
     }
 
+    if(incoming.path == "/netcon.png")
+    {
+        outgoing.headers["Content-type"] = "image/png";
+        return ramfs::filesystem.get_file_autocache("res/server_connected.png");
+    }
+
     //Uh Oh! Error 404 :(
     outgoing.http_return = 404;
     return "Sorry! We could not load the resource! Please check the spelling of the domain :(";
