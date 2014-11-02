@@ -7,17 +7,23 @@
 #include <iostream>
 #include "definitions.hxx"
 #include <cstring>
-class Session
+#include <unordered_map>
+#include <thread>
+#include <mutex>
+class SessionHost
 {
 private:
-    std::vector<std::vector<Point> > image;
-    std::stringstream queue_out;
-    std::vector<std::string> queues;
+    std::unordered_map<std::string, std::vector<std::string>> data;
+    std::unordered_map<std::string, long> timestamp;
+    std::thread cron_thread;
+    std::timed_mutex locky_thingy;
 public:
-    void dequeue(std::string queue);
-    void dequeue_new(std::string queue);
-    std::string getqueue();
-    std::string getQueue(long index);
-    long getQueueDepth();
+    void dequeue(std::string sess, std::string queue);
+    std::string getQueue(std::string sess, long index);
+    std::string getQueue(std::string sess, long indl, bool null);
+    long getQueueDepth(std::string sess);
+    void cron();
+    void keepAlive(std::string sess);
+    SessionHost();
 };
 #endif // SESSION_HXX

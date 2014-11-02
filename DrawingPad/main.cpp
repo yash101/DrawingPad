@@ -1,25 +1,23 @@
 #include <iostream>
 #include <thread>
+#include <string>
 #include "include/server.hxx"
 #include "include/Terminal.hxx"
+#include "include/definitions.hxx"
 
 using namespace std;
 
-void hello()
-{
-    std::cout << "Hello World!" << std::endl;
-}
-
 int main()
 {
+    //Just clear the screen if we are on a Mac. This is my dev PC, and whenever I do a terminal build,
+    //there's a ton of crap on the screen!
 #ifdef __MACH__
     std::system("clear");
 #endif
-    //std::thread x(hello);
-    //x.detach();
-    std::cout << std::endl;
+
     paint_server serv;
     serv.set_listening_port(1234);
+    std::cout << "PaintServer Started...!" << std::endl;
     serv.start_async();
     std::thread terminal_thread(&terminal);
     terminal_thread.detach();

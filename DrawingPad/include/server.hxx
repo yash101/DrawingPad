@@ -10,13 +10,13 @@
 #include <mutex>
 #include <thread>
 #include "Session.hxx"
+#include <map>
 
 class paint_server : public dlib::server_http
 {
 private:
     std::timed_mutex locky_thingy;
-    std::unordered_map<std::string, std::string> db;
-    std::unordered_map<std::string, Session> sessions;
+    SessionHost sessions;
     const std::string process_request(const dlib::incoming_things& incoming, dlib::outgoing_things& outgoing);
 public:
     const std::string on_request(const dlib::incoming_things& incoming, dlib::outgoing_things& outgoing);

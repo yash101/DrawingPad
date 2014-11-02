@@ -1847,6 +1847,12 @@ definitions.hxx
 /Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/definitions.hxx
 cstring
 -
+unordered_map
+-
+thread
+-
+mutex
+-
 
 /Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/definitions.hxx
 
@@ -1875,6 +1881,8 @@ thread
 -
 Session.hxx
 /Users/student/Desktop/stuff/DrawingPad/DrawingPad/include/Session.hxx
+map
+-
 
 /Users/student/Desktop/stuff/DrawingPad/DrawingPad/source/server.cxx
 ../include/server.hxx

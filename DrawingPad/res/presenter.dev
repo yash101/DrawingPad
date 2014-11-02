@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DrawingPad | Collaboration Could Never Be Easier!</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="/jquery.js"></script>
+		<script type="text/javascript" src="/presenter.js"></script>
+	</head>
+	<body>
+		<canvas id="main_canvas"></canvas>
+		<p id="dbg">Debug goes here!</p>
+		<div id="toolbox">
+			<div id="tooltip" style="min-width: 200px; text-align: center;">Tooltip!</div>
+			<div>
+				<input type="range" min="1" max="256" value="5" id="penRad" onmouseover="javascript:toolTip('Pen Size: ' + this.value);" onmousemove="javascript:toolTip('Pen Size: ' + this.value);">
+			</div>
+			<div>
+				<input type="range" min="1" max="16" value="4" id="lineyness" onmouseover="javascript:toolTip('Lineyness: ' + this.value);" onmousemove="javascript:toolTip('Lineyness: ' + this.value);">
+			</div>
+			<div>
+				<input type="color" value="#98BF21" id="penCol" onmouseover="javascript:toolTip('Pen Color');">
+			</div>
+			<div onouseover="javascript:toolTip('Eraser');" onclick="javascript:document.getElementById('penCol').value='#404040';">Eraser</div>
+			<div style="background-color: red;" onmouseover="javascript:toolTip('Clear Whiteboard');" onclick="loadInfo('Double Click to Clear Canvas!');" ondblclick="javascript:clearBoard();">Clear</div>
+			<div onclick="window.location.href = '/viewer';">Viewer</div>
+		</div>
+		<div id="mesbox">
+			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
+			<div id="message">
+				<div id="caption">Message Box!</div>
+				<div id="message_con">No messages here yet! :)</div>
+			</div>
+		</div>
+		<input type="text" placeholder="Session Name" id="sesname" onkeyup="javascript:sesbox_change();"></input>
+		<div id="infobox">
+		</div>
+	</body>
+</html>

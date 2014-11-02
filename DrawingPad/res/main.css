@@ -1,7 +1,13 @@
+*
+{
+	cursor: url(cursor.png), auto;
+}
+
 body
 {
 	background-color: black;
 	color: white;
+	overflow-y: hidden;
 }
 
 #main_canvas
@@ -13,6 +19,12 @@ body
 	width: 80%;
 	height: 80%;
 	border: 4px solid #98BF21;
+	cursor: url(cursor_canvas.png), auto;
+}
+
+#main_canvas:hover
+{
+	border: 4px solid red;
 }
 
 #dbg
@@ -27,6 +39,49 @@ body
 	color: #602571;
 	padding: 0px;
 	margin: 0px;
+	display: none;
+}
+
+#toolbox
+{
+	position: absolute;
+	bottom: 0px;
+	height: 32px;
+	width: 80%;
+	left: 10%;
+	overflow-x: auto;
+	background-color: #404040;
+
+	display: -webkit-box;
+	display: -mox-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+#toolbox div
+{
+	border: 4px solid #98BF21;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#toolbox div:hover
+{
+	border: 4px solid red;
 }
 
 #sesname
@@ -34,11 +89,13 @@ body
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 80%;
+	width: 40%;
 	height: 32px;
-	border: 4px solid black;
+	border: 4px solid #98BF21;
 	border-radius: 20px;
 	padding-left: 16px;
+	background-color: #404040;
+	color: #C6C6C6;
 }
 
 #mesbox
@@ -49,15 +106,15 @@ body
 	bottom: 0px;
 	right: 0px;
 	padding: 32px;
-	-webkit-transition: all 1s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
 	-webkit-transform: translate(-150%, 150%);
-	-moz-transition: all 1s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
 	-moz-transform: translate(-150%, 150%);
-	-ms-transition: all 1s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
 	-ms-transform: translate(-150%, 150%);
-	-o-transition: all 1s ease-in-out;
+	-o-transition: all .5s ease-in-out;
 	-o-transform: translate(-150%, 150%);
-	transition: all 1s ease-in-out;
+	transition: all .5s ease-in-out;
 	transform: translate(-150%, 150%);
 }
 
@@ -112,10 +169,59 @@ body
 
 #sesname:hover
 {
-	border: 4px solid #98BF21;
+	border: 4px solid red;
 }
 
 #sesname:active, #sesname:focus
 {
+	border: 4px solid red;
+}
+
+#sesname:focus
+{
+	background-color: #C6C6C6;
+	color: #404040;
+}
+
+#infobox
+{
+	position: fixed;
+	top: 10%;
+	left: 5%;
+	background-color: #404040;
+	border: 4px solid #98BF21;
+	width: 256px;
+	height: 128px;
+	color: #C6C6C6;
+	text-align: center;
+	display: none;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-ms-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+#infobox:hover
+{
+	border: 4px solid red;
+}
+
+#link_presenter
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	background-color: #404040;
+	color: #C6C6C6;
+	border: 4px solid #98BF21;
+}
+
+#link_presenter:hover
+{
+	bottom: 4px;
 	border: 4px solid red;
 }

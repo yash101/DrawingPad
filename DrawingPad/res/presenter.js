@@ -18,6 +18,15 @@ function closeMessageBox()
 	document.getElementById("mesbox").style.OTransform = "translate(-150%, -150%) rotate(360deg)";	
 }
 
+function toolTip(x)
+{
+	document.getElementById("tooltip").innerHTML = x;
+}
+
+function loadInfo(x)
+{
+}
+
 function loadAJAXPost(location, data, callback)
 {
 	var xhr = new XMLHttpRequest();
@@ -41,6 +50,7 @@ window.onbeforeunload = function()
 };
 
 var ctx;
+var canvas;
 var send = "";
 var liney = 0;
 
@@ -50,39 +60,48 @@ function sendRequest()
 	{
 		loadMessageBox("Session Empty!", "Changes lost! Please fill out the session name, up at the top! :)");
 		send = "";
+		ctx.clearRect(0, 0, document.getElementById("main_canvas").width, document.getElementById("main_canvas").height);
 		return;
 	}
-	document.getElementById("dbg").innerHTML = "Session Empty!";
 	var data = send;
 	data = "req=" + encodeURI(send) + "&ses=" + encodeURI(document.getElementById("sesname").value);
-	document.getElementById("dbg").innerHTML = data;
 	loadAJAXPost("/project", data, function(x) {});
 	send = "";
 }
 
-function draw()
+function clearBoard()
 {
-	var ctx = document.getElementById("main_canvas").getContext("2d");
-	for (var i = 0; i < 640; i++){
-		for (var j = 0; j < 640; j++){
-			ctx.fillStyle = 'rgb(' + Math.floor(255 - (255 / 640) * i) + ',' + Math.floor( 255 - (255 / 640) * j) + ', 0)';
-			ctx.fillRect(j * 1, i * 1, 1, 1);
-		}
-	}
+	ctx.clearRect(0, 0, document.getElementById("main_canvas").width, document.getElementById("main_canvas").height);
+	send = send + " clear ";
+	sendRequest();
 }
+
+var keep_alive = setInterval(function()
+{
+	var sesbox = document.getElementById("sesname");
+	if(sesbox.value != "")
+	{
+		loadAJAXPost("/keepalive", "ses=" + encodeURI(sesbox.value), function(x) { });
+	}
+}, 4000);
 
 window.onload = function()
 {
-	var canvas = document.getElementById("main_canvas");
+	loadAJAXPost("/instructions", "i=presenter", function(x)
+	{
+		loadMessageBox("Instructions", x);
+	});
+	canvas = document.getElementById("main_canvas");
 	canvas.width = $(window).width() * 0.8;
 	canvas.height = $(window).height() * 0.8;
-	var color = "#98BF21";
+
 	if(canvas)
 	{
 		var isDown = false;
-		var ctx = canvas.getContext("2d");
+
+		ctx = canvas.getContext("2d");
+
 		var canvasX, canvasY;
-		ctx.lineWidth = 5;
 
 		$(canvas).mousedown(function(e)
 		{
@@ -91,29 +110,30 @@ window.onload = function()
 			//Start the path for us to draw using.
 			ctx.beginPath();
 			//Get the position of the hit
-			canvasX = e.pageX - canvas.offsetLeft;
-			canvasY = e.pageY - canvas.offsetTop;
+			canvasX = e.pageX - canvas.offsetLeft + 12;
+			canvasY = e.pageY - canvas.offsetTop + 12;
 			//Move the cursor to the starting location
 			ctx.moveTo(canvasX, canvasY);
 
 			//Set the fill color
-			ctx.fillStyle = color;
+			ctx.fillStyle = document.getElementById("penCol").value;
 			//Draw a rectangle
-			ctx.fillRect(canvasX, canvasY, 5, 5);
-			send = send + " begpath " + color + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY;
+			ctx.fillRect(canvasX - 2, canvasY - 2, document.getElementById("penRad").value, document.getElementById("penRad").value);
+			ctx.lineWidth = document.getElementById("penRad").value;
+			send = send + " begpath " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
 		}).mousemove(function(e)
 		{
 			//Check if the mouse is down
 			if(isDown != false)
 			{
 				liney++;
-				if(liney % 2 == 0)
+				if(liney % parseInt(document.getElementById("lineyness").value) == 0)
 				{
 					//Set the color to our right color
-					ctx.strokeStyle = color;
+					ctx.strokeStyle = document.getElementById("penCol").value;
 					//Get the touch position
-					canvasX = e.pageX - canvas.offsetLeft;
-					canvasY = e.pageY - canvas.offsetTop;
+					canvasX = e.pageX - canvas.offsetLeft + 12;
+					canvasY = e.pageY - canvas.offsetTop + 12;
 					//Draw a line to the position we are at now
 					ctx.lineTo(canvasX, canvasY);
 					//Draw everything!
@@ -132,3 +152,25 @@ window.onload = function()
 		});
 	}
 };
+
+function sesbox_change()
+{
+	document.getElementById("sesname").value = document.getElementById("sesname").value.toUpperCase();
+}
+
+var ibox = null;
+function loadInfo(x)
+{
+	var con = document.getElementById("infobox");
+	con.style.display = "block";
+	con.innerHTML = x;
+	clearInterval(ibox);
+	ibox = setInterval(closeInfo, 1000);
+}
+
+function closeInfo()
+{
+	clearInterval(ibox);
+	var con = document.getElementById("infobox");
+	con.style.display = "none";
+}
