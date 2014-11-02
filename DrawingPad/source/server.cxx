@@ -149,11 +149,11 @@ const std::string paint_server::on_request(const dlib::incoming_things &incoming
     //WARNING: DISABLE THIS BEFORE PRODUCTION USE! WILL CAUSE A TON OF SHELL I/O :(
 
     //Lock the mutex. This is to grant 100% read/write accuracy and prevents memory corruption (a symptom of C++'s speed :D)
-    locky_thingy.try_lock_for(std::chrono::milliseconds(MUTEX_TIMEOUT));
+    //locky_thingy.try_lock_for(std::chrono::milliseconds(MUTEX_TIMEOUT));
     //Perform the actual request and store it in a string!
     std::string request = process_request(incoming, outgoing);
     //Unlock the Mutex. FAIL TO DO THIS AND THE SERVER FREEZES AFTER THE FIRST CLIENT CONNECTION!
-    locky_thingy.unlock();
+    //locky_thingy.unlock();
     //Return the request back to the web server to be sent back!
     return request;
 }
