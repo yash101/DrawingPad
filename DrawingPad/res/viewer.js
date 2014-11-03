@@ -109,6 +109,8 @@ function parseRequest(c)
 		if(cmd[i] == "begpath")
 		{
 			ctx.beginPath();
+			i++;
+			ctx.lineCap = cmd[i];
 
 			i++;
 			ctx.fillStyle = cmd[i];
@@ -135,7 +137,7 @@ function parseRequest(c)
 
 			ctx.moveTo(canvasX, canvasY);
 			ctx.lineWidth = strokeRad;
-			ctx.fillRect(canvasX - 2, canvasY - 2, strokeRad, strokeRad);
+			ctx.fillRect(canvasX - 2 - (strokeRad / 2), canvasY - 2 - (strokeRad / 2), strokeRad, strokeRad);
 		}
 
 		if(cmd[i] == "point")
@@ -208,6 +210,10 @@ function render()
 
 window.onload = function()
 {
+	if(pid != "")
+	{
+		document.getElementById("sesname").value = decodeURI(pid);
+	}
 	canvas = document.getElementById("main_canvas");
 	sesname = document.getElementById("sesname");
 	ctx = canvas.getContext("2d");

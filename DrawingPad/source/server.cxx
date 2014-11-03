@@ -19,6 +19,7 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
     if(incoming.path == "/keepalive")
     {
         sessions.keepAlive(incoming.queries["ses"]);
+        return "Successful!";
     }
     //Note that I used an operator overload for std::strings. This is so that we can avoid excessive !strcmp()! ;)
     if(incoming.path == "/presenter")
@@ -58,7 +59,12 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
     //Viewer
     if(incoming.path == "/viewer")
     {
-        return ramfs::filesystem.get_file_autocache("res/viewer.dev");
+        std::stringstream str;
+        str << "<script type=\"text/javascript\">" << std::endl;
+        str << "var pid = \"\";" << std::endl;
+        str << "</script>" << std::endl;
+        str << ramfs::filesystem.get_file_autocache("res/viewer.dev");
+        return str.str();
     }
 
     if(incoming.path == "/viewer.js")
@@ -99,6 +105,16 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
         {
             return ramfs::filesystem.get_file_autocache("res/instructions_presenter.dev");
         }
+    }
+
+    if(incoming.path.substr(0, 5) == "/r?i=")
+    {
+        std::stringstream str;
+        str << "<script type=\"text/javascript\">" << std::endl;
+        str << "var pid = \"" << incoming.path.substr(5, incoming.path.size()) << "\";" << std::endl;
+        str << "</script>" << std::endl;
+        str << ramfs::filesystem.get_file_autocache("res/viewer.dev");
+        return str.str();
     }
 
     if(incoming.path == "/cursor.png")

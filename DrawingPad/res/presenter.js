@@ -94,6 +94,8 @@ var keep_alive = setInterval(function()
 
 window.onload = function()
 {
+//	context.lineCap = 'butt';
+
 	loadAJAXPost("/instructions", "i=presenter", function(x)
 	{
 		loadMessageBox("Instructions", x);
@@ -116,6 +118,7 @@ window.onload = function()
 			isDown = true;
 			//Start the path for us to draw using.
 			ctx.beginPath();
+			ctx.lineCap = document.getElementById("tool").value;
 			//Get the position of the hit
 			canvasX = e.pageX - canvas.offsetLeft + 12;
 			canvasY = e.pageY - canvas.offsetTop + 12;
@@ -125,9 +128,9 @@ window.onload = function()
 			//Set the fill color
 			ctx.fillStyle = document.getElementById("penCol").value;
 			//Draw a rectangle
-			ctx.fillRect(canvasX - 2, canvasY - 2, document.getElementById("penRad").value, document.getElementById("penRad").value);
+			ctx.fillRect(canvasX - 2 - (document.getElementById("penRad").value / 2), canvasY - 2 - (document.getElementById("penRad").value / 2), document.getElementById("penRad").value, document.getElementById("penRad").value);
 			ctx.lineWidth = document.getElementById("penRad").value;
-			send = send + " begpath " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
+			send = send + " begpath " + document.getElementById("tool").value + " " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
 		}).mousemove(function(e)
 		{
 			//Check if the mouse is down
@@ -157,57 +160,14 @@ window.onload = function()
 			send = send + " endpath ";
 			sendRequest();
 		});
-		window.addEventListener("touchstart", function(e)
-		{
-			//Let's set that we are holding our finger on the touchpad left button
-			isDown = true;
-			//Start the path for us to draw using.
-			ctx.beginPath();
-			//Get the position of the hit
-			canvasX = e.pageX - canvas.offsetLeft + 12;
-			canvasY = e.pageY - canvas.offsetTop + 12;
-			//Move the cursor to the starting location
-			ctx.moveTo(canvasX, canvasY);
-
-			//Set the fill color
-			ctx.fillStyle = document.getElementById("penCol").value;
-			//Draw a rectangle
-			ctx.fillRect(canvasX - 2, canvasY - 2, document.getElementById("penRad").value, document.getElementById("penRad").value);
-			ctx.lineWidth = document.getElementById("penRad").value;
-			send = send + " begpath " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
-		});
-		window.addEventListener("touchmove", function(e)
-		{
-			//Check if the mouse is down
-			if(isDown != false)
-			{
-				liney++;
-				if(liney % parseInt(document.getElementById("lineyness").value) == 0)
-				{
-					//Set the color to our right color
-					ctx.strokeStyle = document.getElementById("penCol").value;
-					//Get the touch position
-					canvasX = e.pageX - canvas.offsetLeft + 12;
-					canvasY = e.pageY - canvas.offsetTop + 12;
-					//Draw a line to the position we are at now
-					ctx.lineTo(canvasX, canvasY);
-					//Draw everything!
-					ctx.stroke();
-					send = send + " point " + canvasX + " " + canvasY;
-				}
-			}
-		});
-		window.addEventListener("touchend", function(e)
-		{
-			//No longer drawing anymore
-			isDown = false;
-			//Close the path
-			ctx.closePath();
-			send = send + " endpath ";
-			sendRequest();
-		});
 	}
 };
+
+function getShareLink()
+{
+	var d = "<a href=\"/r?i=" + encodeURI(document.getElementById("sesname").value) + "\" target=\"_blank\">Right click this and copy it's address!</a>";
+	loadMessageBox("Share", "To share, please send the link, " + d + " to your guests!");
+}
 
 function sesbox_change()
 {

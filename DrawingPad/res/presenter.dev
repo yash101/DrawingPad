@@ -21,8 +21,16 @@
 				<input type="color" value="#98BF21" id="penCol" onmouseover="javascript:toolTip('Pen Color');">
 			</div>
 			<div onouseover="javascript:toolTip('Eraser');" onclick="javascript:document.getElementById('penCol').value='#404040';">Eraser</div>
+			<div onmouseover="javascript:toolTip('Pen Style');">
+				<select id="tool">
+					<option value="round">Round</option>
+					<option value="square">Square</option>
+					<option value="butt">Butt</option>
+				</select>
+			</div>
+			<div id="sharelink" onclick="javascript:getShareLink();">Share Session</div>
+			<div onclick="window.location.href = '/viewer';" onclick="javascript:toolTip('Presenter');">Viewer</div>
 			<div style="background-color: red;" onmouseover="javascript:toolTip('Clear Whiteboard');" onclick="loadInfo('Double Click to Clear Canvas!');" ondblclick="javascript:clearBoard();">Clear</div>
-			<div onclick="window.location.href = '/viewer';">Viewer</div>
 		</div>
 		<div id="mesbox">
 			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
