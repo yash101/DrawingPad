@@ -98,10 +98,12 @@ void SessionHost::cron()
         for(std::map<std::string, long>::iterator ite = timestamp.begin(); ite != timestamp.end(); ++ite)
         {
             timethrough++;
-            std::cout << "Time through: " << timethrough << std::endl;
+            if(DEBUG)
+            {
+                std::cout << "Time through: " << timethrough << std::endl;
+            }
             std::string curkey = ite->first;
             long curval = ite->second;
-            std::cout << "Key: " << curkey << std::endl;
             if(DEBUG)
             {
                 std::cout << "Checking " << curkey << " with old ts of " << curval << std::endl;
@@ -133,7 +135,10 @@ void SessionHost::cron()
         {
             timestamp.erase(del[i]);
             data.erase(del[i]);
-            std::cout << "Erasing: " << del[i] << std::endl;
+            if(DEBUG)
+            {
+                std::cout << "Erasing: " << del[i] << std::endl;
+            }
         }
 
         locky_thingy.unlock();
