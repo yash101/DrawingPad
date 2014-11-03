@@ -149,8 +149,13 @@ void SessionHost::cron()
         {
             std::cout << "Cron Running!" << std::endl;
         }
+<<<<<<< HEAD
         while(!locky_thingy.try_lock_for(std::chrono::milliseconds(MUTEX_TIMEOUT))) {}
         for(auto i = timestamp.begin(); i != timestamp.end(); ++i)
+=======
+        while(!locky_thingy.try_lock_for(std::chrono::milliseconds(MUTEX_TIMEOUT)));
+        for(auto i = data.begin(); i != data.end(); ++i)
+>>>>>>> bb58229f04b789896727f168c6e89866131fdbb1
         {
             if(DEBUG)
             {
