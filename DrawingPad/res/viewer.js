@@ -200,7 +200,8 @@ function render()
 					});
 
 					fetching = false;
-					sleep(20);
+					curqd++;
+					break;
 				}
 			});
 			inProgress = false;
@@ -222,5 +223,5 @@ window.onload = function()
 		loadMessageBox("Instructions", x);
 	});
 
-	renderer_handler = setInterval(render, 300);
+	renderer_handler = setInterval(render, 200);
 }
