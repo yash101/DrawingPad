@@ -23,9 +23,11 @@ function closeMessageBox()
 
 function loadAJAXPost(location, data, callback)
 {
+	document.getElementById("status_light").style.backgroundColor = "blue";
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function()
 	{
+		document.getElementById("status_light").style.backgroundColor = "green";
 		document.getElementById("servcon").style.backgroundColor = "green";
 		if(xhr.readyState = 4)
 		{
@@ -36,13 +38,16 @@ function loadAJAXPost(location, data, callback)
 	xhr.onerror = function()
 	{
 		document.getElementById("servcon").style.backgroundColor = "red";
+		document.getElementById("status_light").style.backgroundColor = "red";
 	}
 
 	xhr.open("POST", location, true);
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xhr.timeout = 4000;
 	xhr.send(data);
+	document.getElementById("status_light").style.backgroundColor = "sky-blue";
 }
+
 
 function loadAJAXPostErrorHandler(location, data, callback)
 {
@@ -167,6 +172,7 @@ function sesname_change()
 	document.getElementById("sesname").value = document.getElementById("sesname").value.toUpperCase();
 	ctx.clearRect(0, 0, document.getElementById("main_canvas").width, document.getElementById("main_canvas").height);
 	curqd = 0;
+	loadInfo("Session Name Updated:<h3>[" + document.getElementById("sesname").value + "]!</h3>");
 }
 
 var renderer_handler = null;
@@ -209,6 +215,14 @@ function render()
 	}
 }
 
+function getInstructions()
+{
+	loadAJAXPost("/instructions", "i=viewer", function(x)
+	{
+		loadMessageBox("Instructions", x);
+	});
+}
+
 window.onload = function()
 {
 	if(pid != "")
@@ -224,4 +238,21 @@ window.onload = function()
 	});
 
 	renderer_handler = setInterval(render, 200);
+}
+
+var ibox = null;
+function loadInfo(x)
+{
+	var con = document.getElementById("infobox");
+	con.style.display = "block";
+	con.innerHTML = x;
+	clearInterval(ibox);
+	ibox = setInterval(closeInfo, 1000);
+}
+
+function closeInfo()
+{
+	clearInterval(ibox);
+	var con = document.getElementById("infobox");
+	con.style.display = "none";
 }

@@ -35,6 +35,7 @@ namespace ramfs
         void put_file_async(std::string file_location, std::string file_data);
         void put_file_async_on_disk(std::string file_location, std::string file_data);
         void put_file_async_on_disk_async(std::string file_locationm, std::string file_data);
+        void sync();
     };
 
     static ramfs filesystem;

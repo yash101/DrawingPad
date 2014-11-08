@@ -1,5 +1,11 @@
 #include "../include/Terminal.hxx"
 
+//To compare two strings to each other. Note that this function is private to only this source file
+inline bool operator== (std::string& a, std::string& b)
+{
+    return !strcmp(a.c_str(), b.c_str());
+}
+
 void terminal()
 {
     while(true)
@@ -20,6 +26,12 @@ void terminal()
         if(!strcmp(cmd.c_str(), "terminate"))
         {
             std::terminate();
+        }
+
+        if(cmd == "recache")
+        {
+            std::cout << "Recaching all files!" << std::endl;
+            ramfs::filesystem.sync();
         }
 
         std::cout << "+---------------------------------------------+" << std::endl;

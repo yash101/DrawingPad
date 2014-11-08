@@ -8,4 +8,5 @@
 #define SESSION_TIMEOUT     10000       //How long a session should last before deletion
 #define PORTNO_PAINTSERVER  1234        //What port to use for the main server
 #define PORTNO_TELNET       2345        //What port to use for the telnet server
+#define FORK                true        //Whether to fork the process and daemonize!
 #endif // DEFINITIONS_HXX

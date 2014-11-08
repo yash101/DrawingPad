@@ -133,8 +133,8 @@ body
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	width: 40%;
-	height: 40%;
+	width: 60%;
+	height: 60%;
 	background-color: black;
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
@@ -143,6 +143,40 @@ body
 	transform: translate(-50%, -50%);
 	overflow-y: auto;
 	text-align: center;
+	border: 4px solid #98BF21;
+	-webkit-transition: all .5s ease-in-out;
+}
+
+#message:hover
+{
+	border: 4px solid red;
+	//-webkit-transform: translate(-50%, -50%) rotate(1.2deg);
+	-moz-transform: translate(-50%, -50%) rotate(1.2deg);
+	-ms-transform: translate(-50%, -50%) rotate(1.2deg);
+	-o-transform: translate(-50%, -50%) rotate(1.2deg);
+	transform: translate(-50%, -50%) rotate(1.2deg);
+}
+
+#message a
+{
+	color: #C6C6C6;
+	background-color: black;
+}
+
+#message a:hover
+{
+	color: #404040;
+	background-color: #C6C6C6;
+}
+
+.blinky_border
+{
+	border: 4px solid #98BF21;
+}
+
+.blinky_border:hover
+{
+	border: 4px solid red;
 }
 
 #caption
@@ -232,4 +266,60 @@ body
 	background-color: green;
 	width: 64px;
 	height: 64px;
+}
+
+#instructions_box
+{
+	background-color: #404040;
+	position: fixed;
+	top: 0px;
+	right: 64px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 18px;
+	border: 4px solid #98BF21;
+}
+
+#instructions_box:hover
+{
+	border: 4px solid red;
+}
+
+#status_light
+{
+	position: fixed;
+	width: 64px;
+	height: 64px;
+	top: 64px;
+	right: 0px;
+	background-color: red;
+}
+#status_light2
+{
+	position: fixed;
+	width: 64px;
+	height: 64px;
+	top: 128px;
+	right: 0px;
+	background-color: red;
+}
+#status_light3
+{
+	position: fixed;
+	width: 64px;
+	height: 64px;
+	top: 192px;
+	right: 0px;
+	background-color: red;
+}
+#status_light4
+{
+	position: fixed;
+	width: 64px;
+	height: 64px;
+	top: 256px;
+	right: 0px;
+	background-color: red;
 }

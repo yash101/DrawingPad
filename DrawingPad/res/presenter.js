@@ -23,15 +23,14 @@ function toolTip(x)
 	document.getElementById("tooltip").innerHTML = x;
 }
 
-function loadInfo(x)
-{
-}
-
 function loadAJAXPost(location, data, callback)
 {
+	document.getElementById("status_light").style.backgroundColor = "blue";
+	document.getElementById("status_light2").style.backgroundColor = "blue";
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function()
 	{
+		document.getElementById("status_light").style.backgroundColor = "green";
 		document.getElementById("servcon").style.backgroundColor = "green";
 		if(xhr.readyState = 4)
 		{
@@ -42,12 +41,15 @@ function loadAJAXPost(location, data, callback)
 	xhr.onerror = function()
 	{
 		document.getElementById("servcon").style.backgroundColor = "red";
+		document.getElementById("status_light").style.backgroundColor = "red";
 	}
 
 	xhr.open("POST", location, true);
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xhr.timeout = 4000;
 	xhr.send(data);
+	document.getElementById("status_light").style.backgroundColor = "sky-blue";
+	document.getElementById("status_light2").style.backgroundColor = "sky-blue";
 }
 
 
@@ -68,8 +70,10 @@ function sendRequest()
 		loadMessageBox("Session Empty!", "Changes lost! Please fill out the session name, up at the top! :)");
 		send = "";
 		ctx.clearRect(0, 0, document.getElementById("main_canvas").width, document.getElementById("main_canvas").height);
+		document.getElementById("status_light3").style.backgroundColor = "orange";
 		return;
 	}
+	document.getElementById("status_light3").style.backgroundColor = "green";
 	var data = send;
 	data = "req=" + encodeURI(send) + "&ses=" + encodeURI(document.getElementById("sesname").value);
 	loadAJAXPost("/project", data, function(x) {});
@@ -92,6 +96,14 @@ var keep_alive = setInterval(function()
 	}
 }, 4000);
 
+function getInstructions()
+{
+	loadAJAXPost("/instructions", "i=presenter", function(x)
+	{
+		loadMessageBox("Instructions", x);
+	});
+}
+
 window.onload = function()
 {
 //	context.lineCap = 'butt';
@@ -106,6 +118,7 @@ window.onload = function()
 
 	if(canvas)
 	{
+		document.getElementById("status_light4").style.backgroundColor = "blue";
 		var isDown = false;
 
 		ctx = canvas.getContext("2d");
@@ -114,6 +127,7 @@ window.onload = function()
 
 		$(canvas).mousedown(function(e)
 		{
+			document.getElementById("status_light4").style.backgroundColor = "orange";
 			//Let's set that we are holding our finger on the touchpad left button
 			isDown = true;
 			//Start the path for us to draw using.
@@ -133,6 +147,7 @@ window.onload = function()
 			send = send + " begpath " + document.getElementById("tool").value + " " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
 		}).mousemove(function(e)
 		{
+			document.getElementById("status_light4").style.backgroundColor = "purple";
 			//Check if the mouse is down
 			if(isDown != false)
 			{
@@ -153,12 +168,16 @@ window.onload = function()
 			}
 		}).mouseup(function(e)
 		{
+			document.getElementById("status_light4").style.backgroundColor = "sky-blue";
 			//No longer drawing anymore
 			isDown = false;
 			//Close the path
 			ctx.closePath();
 			send = send + " endpath ";
 			sendRequest();
+		}).click(function(e)
+		{
+			document.getElementById("status_light4").style.backgroundColor = "DeepPink";
 		});
 	}
 };
@@ -172,6 +191,7 @@ function getShareLink()
 function sesbox_change()
 {
 	document.getElementById("sesname").value = document.getElementById("sesname").value.toUpperCase();
+	loadInfo("Session Name Updated:<h3>[" + document.getElementById("sesname").value + "]!</h3>");
 }
 
 var ibox = null;

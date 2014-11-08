@@ -146,6 +146,14 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
         return ramfs::filesystem.get_file_autocache("res/server_connected.png");
     }
 
+    if(incoming.path == "/halt")
+    {
+        std::thread([](){
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            exit(EXIT_SUCCESS);
+        }).detach();
+    }
+
     //Uh Oh! Error 404 :(
     outgoing.http_return = 404;
     return "Sorry! We could not load the resource! Please check the spelling of the domain :(";

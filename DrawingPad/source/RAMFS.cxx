@@ -82,6 +82,25 @@ bool ramfs::ramfs::cache_file(std::string file_location)
     }
 }
 
+void ramfs::ramfs::sync()
+{
+    for(auto it = filesystem.begin(); it != filesystem.end(); it++)
+    {
+        if(DEBUG)
+        {
+            std::cout << "Recaching file..." << it->first;
+        }
+        if(stat_file(it->first))
+        {
+            std::cout << "Success!" << std::endl;
+            put(it->first, read_file(it->first));
+        }
+        else
+        {
+            std::cout << "Fail!" << std::endl;
+        }
+    }
+}
 
 void ramfs::ramfs::cache_list(std::vector<std::string> file_locations)
 {

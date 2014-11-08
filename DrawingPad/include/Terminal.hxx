@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include "../dlib/server.h"
+#include "RAMFS.hxx"
 
 void terminal();
 class telnet_server : public dlib::server_iostream
