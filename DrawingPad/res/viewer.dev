@@ -9,8 +9,8 @@
 	<body>
 		<canvas id="main_canvas"></canvas>
 		<p id="dbg">Debug goes here!</p>
-		<input type="text" placeholder="Session Name" id="sesname" onkeyup="javascript:sesname_change();"></input>
 		<div id="link_presenter" onclick="window.location.href='/presenter';">Want to present?</div>
+		<div id="instructions_box" onclick="javascript:getInstructions()">Instructions</div>
 		<div id="mesbox">
 			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
 			<div id="message">
@@ -18,10 +18,10 @@
 				<div id="message_con">No messages here yet! :)</div>
 			</div>
 		</div>
+		<input type="text" placeholder="Session Name" id="sesname" onkeyup="javascript:sesname_change();"></input>
 		<div id="infobox">
 		</div>
 		<img id="servcon" src="/netcon.png"></img>
-		<div id="instructions_box" onclick="javascript:getInstructions()">Instructions</div>
 		<div id="status_light"></div>
 	</body>
 </html>
