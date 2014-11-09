@@ -58,7 +58,7 @@
 #endif
 
 #if PORTNO_PAINTSERVER <= 0
-#error Invalid port number for the PaintServer!"
+#error Invalid port number for the PaintServer!
 #endif
 #if SESSION_TIMEOUT < 4000
 #pragma message("Timeout value is low. 4000 milliseconds is the keepalive interval. Please consider that sessions may time out when unintended!");
