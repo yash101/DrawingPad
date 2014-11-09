@@ -7,64 +7,89 @@
 
 #include <sys/types.h>
 #include <unistd.h>
+#ifndef __WIN32
+#include <dirent.h>
+#include <sys/stat.h>
+#else
+#include <windows.h>
+#endif
 using namespace std;
+
+//Before we boot...
+void preboot()
+{
+    if(DEBUG)
+    {
+        std::cout << "Creating the data directory!" << std::endl;
+    }
+#ifdef __WIN32
+    CreateDirectory("dat", NULL);
+#else
+    mkdir("dat", 0755);
+#endif
+}
 
 #ifdef SIGHANDLE
 void sighandle(int sig)
 {
-    if(DEBUG)
+    std::ofstream tout("dat/log.d", std::ios::app);
+    if(tout.is_open())
     {
-        std::cout << "Recieved signal: " << sig << std::endl;
-    }
-    if(sig == 1)
-    {
-        if(DEBUG)
+        if(!DEBUG)
         {
-            std::cout << "SIGHUP sent. The user probably hung up. Let's continue running!" << std::endl;
+            tout << "Recieved signal: " << sig << std::endl;
         }
-        return;
-    }
-    else if(sig == 2)
-    {
-        if(DEBUG)
+        if(sig == 1)
         {
-            std::cout << "SIGINT sent. We'll clean up our trash and exit! :)" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGHUP sent. The user probably hung up. Let's continue running!" << std::endl;
+            }
+            return;
         }
-    }
-    else if(sig == SIGILL)
-    {
-        if(DEBUG)
+        else if(sig == 2)
         {
-            std::cout << "SIGILL issued. There's something going wrong!" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGINT sent. We'll clean up our trash and exit! :)" << std::endl;
+            }
         }
-    }
-    else if(sig == SIGABRT)
-    {
-        if(DEBUG)
+        else if(sig == SIGILL)
         {
-            std::cout << "SIGABRT issued. Something's going wrong! We're going to shut down!" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGILL issued. There's something going wrong!" << std::endl;
+            }
         }
-    }
-    else if(sig == SIGFPE)
-    {
-        if(DEBUG)
+        else if(sig == SIGABRT)
         {
-            std::cout << "SIGFPE issued. Perhaps there is some sort of bug in the code that allows this program to divide by zero! Maybe I just ran out of bits!" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGABRT issued. Something's going wrong! We're going to shut down!" << std::endl;
+            }
         }
-    }
-    else if(sig == SIGSEGV)
-    {
-        if(DEBUG)
+        else if(sig == SIGFPE)
         {
-        std::cout << "SIGSEGV issued. SEGMENTATION FAULT!" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGFPE issued. Perhaps there is some sort of bug in the code that allows this program to divide by zero! Maybe I just ran out of bits!" << std::endl;
+            }
         }
-    }
-    else if(sig == SIGCHLD)
-    {
-        if(DEBUG)
+        else if(sig == SIGSEGV)
         {
-            std::cout << "Recieved SIGCHLD. I think we are being asked to terminate. Let's do it the proper way ;)" << std::endl;
+            if(!DEBUG)
+            {
+                tout << "SIGSEGV issued. SEGMENTATION FAULT!" << std::endl;
+            }
         }
+        else if(sig == SIGCHLD)
+        {
+            if(!DEBUG)
+            {
+                tout << "Recieved SIGCHLD. I think we are being asked to terminate. Let's do it the proper way ;)" << std::endl;
+            }
+        }
+        tout.close();
     }
 
     if(DEBUG)
@@ -75,7 +100,7 @@ void sighandle(int sig)
     std::ofstream fout("dat/pid.dat");
     if(fout.is_open())
     {
-        fout << "Done";
+        fout << "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         fout.close();
     }
 
@@ -103,11 +128,11 @@ void boot()
     //Kill old children of same PID. Otherwise, we won't be able to open ports!
 #ifdef AUTOKILL
     std::ifstream fin("dat/pid.dat");
-    if(fin.is_open())
+    if(fin.is_open() && fin.good())
     {
         std::stringstream str;
         str << fin.rdbuf();
-        if(strcmp(str.str().c_str(), "Done"))
+        if(str.str().size() < 8 && str.str().size() > 0)
         {
             if(DEBUG)
             {
@@ -125,24 +150,60 @@ void boot()
         }
         fin.close();
     }
+    if(!fin.good())
+    {
+        if(DEBUG)
+        {
+            std::cout << "PIDFILE does not exist!" << std::endl;
+        }
+    }
 #endif
 
     //Save the PID of the child
-    std::fstream fout("dat/pid.dat");
+    std::ofstream fout("dat/pid.dat");
     if(fout.is_open())
     {
         fout << getpid();
         fout.close();
     }
 
-    //Start the server
-    paint_server serv;
-    serv.set_listening_port(1234);
-    std::cout << "PaintServer Started...!" << std::endl;
-    serv.start_async();
+    if(DEBUG)
+    {
+        std::cout << "Launching the server!" << std::endl;
+    }
+//    try
+//    {
+        //Start the server
+        paint_server serv;
+        serv.set_listening_port(PORTNO_PAINTSERVER);
+        serv.start_async();
+//    }
+//    catch(exception& e)
+//    {
+//        if(DEBUG)
+//        {
+//            std::cout << "Unable to start the server on port " << PORTNO_PAINTSERVER << std::endl;
+//            std::cout << "Perhaps there is another server using port " << PORTNO_PAINTSERVER << std::endl;
+//            std::cout << "Otherwise, it's also possible that either you disabled AUTOKILL, or AUTOKILL failed to run!" << std::endl;
+//            std::cout << "Exception data: [" << e.what() << "]" << std::endl;
+//            std::cout << "Quitting because of internal server failure!!!" << std::endl;
+//            raise(SIGILL);
+//        }
+//        std::ofstream lout("dat/log.d");
+//        if(lout.is_open())
+//        {
+//            fout << "Quitting! [" << e.what() << "]" << std::endl;
+//            lout.close();
+//        }
+//    }
+    if(DEBUG)
+    {
+        std::cout << "PaintServer Started...!" << std::endl;
+    }
 
     //Start the terminal if we will not fork. Otherwise, std::cin is not the best thing to play around with!
 #ifndef FORK
+    std::cout << "Launching Terminal!" << std::endl;
     if(TERMINAL)
     {
         std::thread terminal_thread(&terminal);
@@ -155,6 +216,7 @@ void boot()
 
 int main()
 {
+    preboot();
 
     //Just clear the screen if we are on a Mac. This is my dev PC, and whenever I do a terminal build,
     //there's a ton of crap on the screen!
@@ -166,21 +228,33 @@ int main()
 #ifdef FORK
     pid_t p = fork();
     std::this_thread::sleep_for(std::chrono::milliseconds(10));
-    std::cout << "PID: " << p << std::endl;
+    if(DEBUG)
+    {
+        std::cout << "PID: " << p << std::endl;
+    }
     if(p < 0)
     {
-        std::cout << "Failed to fork! Will run normally!" << std::endl;
+        if(DEBUG)
+        {
+            std::cout << "Failed to fork! Will run normally!" << std::endl;
+        }
     }
     else
     {
         if(p == 0)
         {
-            std::cout << "Child has been spawned!" << std::endl;
+            if(DEBUG)
+            {
+                std::cout << "Child has been spawned!" << std::endl;
+            }
         }
         else
         {
-            std::this_thread::sleep_for(std::chrono::seconds(3));
-            std::cout << "Parent will now exit!" << std::endl;
+            std::this_thread::sleep_for(std::chrono::microseconds(10));
+            if(DEBUG)
+            {
+                std::cout << "Parent will now exit!" << std::endl;
+            }
             return 0;
         }
     }

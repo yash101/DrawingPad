@@ -10,22 +10,22 @@ void terminal()
 {
     while(true)
     {
-        telnet_server telserv;
-        telserv.set_listening_port(4321);
-        //telserv.start_async();
-        //std::cout << "Started Telnet Server!" << std::endl;
+//        telnet_server telserv;
+//        telserv.set_listening_port(4321);
         std::string cmd;
         std::cout << "$ ";
         std::getline(std::cin, cmd);
 
         if(!strcmp(cmd.c_str(), "exit"))
         {
-            exit(EXIT_SUCCESS);
+            std::cout << "Shutting Down!" << std::endl;
+            raise(SIGINT);
         }
 
         if(!strcmp(cmd.c_str(), "terminate"))
         {
-            std::terminate();
+            std::cout << "Terminating!" << std::endl;
+            raise(SIGABRT);
         }
 
         if(cmd == "recache")
@@ -44,7 +44,13 @@ void terminal()
     }
 }
 
-void telnet_server::on_connect(std::istream &in, std::ostream &out, const std::string &foreign_ip, const std::string &local_ip, unsigned short foreign_port, unsigned short local_port, dlib::uint64 connection_id)
+void telnet_server::on_connect(std::istream &in,
+                               std::ostream &out,
+                               const std::string &foreign_ip,
+                               const std::string &local_ip,
+                               unsigned short foreign_port,
+                               unsigned short local_port,
+                               dlib::uint64 connection_id)
 {
     std::string buf;
     out << "Please enter the passphrase!" << std::endl;

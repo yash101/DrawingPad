@@ -150,7 +150,8 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
     {
         std::thread([](){
             std::this_thread::sleep_for(std::chrono::seconds(1));
-            exit(EXIT_SUCCESS);
+            raise(SIGINT);
+            //exit(EXIT_SUCCESS);
         }).detach();
     }
 

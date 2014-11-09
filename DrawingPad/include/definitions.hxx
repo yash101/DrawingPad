@@ -63,4 +63,13 @@
 #if SESSION_TIMEOUT < 4000
 #pragma message("Timeout value is low. 4000 milliseconds is the keepalive interval. Please consider that sessions may time out when unintended!");
 #endif
+
+#ifndef DEBUG
+#define DEBUG               true
+#endif
+
+#if !FORK
+#undef FORK
+#endif
+
 #endif // DEFINITIONS_HXX

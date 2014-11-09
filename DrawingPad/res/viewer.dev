@@ -12,7 +12,8 @@
 		<div id="link_presenter" onclick="window.location.href='/presenter';">Want to present?</div>
 		<div id="instructions_box" onclick="javascript:getInstructions()">Instructions</div>
 		<div id="mesbox">
-			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
+			<div id="mesbox_back" onclick="javascript:closeMessageBox();"></div>
+			<div id="close_message_box" onclick="javascript:closeMessageBox();">X</div>
 			<div id="message">
 				<div id="caption">Message Box!</div>
 				<div id="message_con">No messages here yet! :)</div>

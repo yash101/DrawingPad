@@ -161,7 +161,7 @@ SessionHost::SessionHost()
 {
     if(DEBUG)
     {
-        std::cout << "Constructed SessionHost! Launched cron!" << std::endl;
+        std::cout << "Constructed SessionHost! " << std::endl << "Launched cron!" << std::endl;
     }
     cron_thread = std::thread(&SessionHost::cron, this);
 }
