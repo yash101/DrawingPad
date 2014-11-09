@@ -271,11 +271,17 @@ body
 #servcon
 {
 	position: fixed;
-	top: 0px;
-	right: 0px;
+	top: 8px;
+	right: 4px;
 	background-color: green;
 	width: 64px;
 	height: 64px;
+	border-radius: 50%;
+}
+
+#servicon:hover
+{
+	border-radius: 0px;
 }
 
 #instructions_box
@@ -283,7 +289,7 @@ body
 	background-color: #404040;
 	position: fixed;
 	top: 0px;
-	right: 64px;
+	right: 80px;
 	padding-left: 16px;
 	padding-right: 16px;
 	padding-top: 0px;
@@ -302,34 +308,48 @@ body
 	position: fixed;
 	width: 64px;
 	height: 64px;
-	top: 64px;
-	right: 0px;
+	top: 80px;
+	right: 4px;
 	background-color: red;
+	border-radius: 50%;
 }
 #status_light2
 {
 	position: fixed;
 	width: 64px;
 	height: 64px;
-	top: 128px;
-	right: 0px;
+	top: 152px;
+	right: 4px;
 	background-color: red;
+	border-radius: 50%;
 }
 #status_light3
 {
 	position: fixed;
 	width: 64px;
 	height: 64px;
-	top: 192px;
-	right: 0px;
+	top: 224px;
+	right: 4px;
 	background-color: red;
+	border-radius: 50%;
 }
 #status_light4
 {
 	position: fixed;
 	width: 64px;
 	height: 64px;
-	top: 256px;
-	right: 0px;
+	top: 296px;
+	right: 4px;
 	background-color: red;
+	border-radius: 50%;
+}
+
+#status_holder
+{
+	position: fixed;
+	width: 72px;
+	height: 364px;
+	top: 0px;
+	right: 0px;
+	background-color: #404040;
 }
