@@ -23,14 +23,29 @@ function toolTip(x)
 	document.getElementById("tooltip").innerHTML = x;
 }
 
+var zxy = false;
 function loadAJAXPost(location, data, callback)
 {
-	document.getElementById("status_light").style.backgroundColor = "blue";
-	document.getElementById("status_light2").style.backgroundColor = "blue";
+	if(zxy)
+	{
+		document.getElementById("status_light").style.backgroundColor = "blue";
+	}
+	else
+	{
+		document.getElementById("status_light").style.backgroundColor = "orange";
+	}
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function()
 	{
-		document.getElementById("status_light").style.backgroundColor = "green";
+		if(zxy)
+		{
+			document.getElementById("status_light").style.backgroundColor = "yellow";
+		}
+		else
+		{
+			document.getElementById("status_light").style.backgroundColor = "green";
+		}
+		zxy = !zxy;
 		document.getElementById("servcon").style.backgroundColor = "green";
 		if(xhr.readyState = 4)
 		{
@@ -49,7 +64,6 @@ function loadAJAXPost(location, data, callback)
 	xhr.timeout = 4000;
 	xhr.send(data);
 	document.getElementById("status_light").style.backgroundColor = "sky-blue";
-	document.getElementById("status_light2").style.backgroundColor = "sky-blue";
 }
 
 

@@ -294,12 +294,18 @@ body
 	padding-right: 16px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-	font-size: 18px;
+	font-size: 24px;
 	border: 4px solid #98BF21;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
 }
 
 #instructions_box:hover
 {
+	top: 8px;
 	border: 4px solid red;
 }
 
@@ -313,6 +319,7 @@ body
 	background-color: red;
 	border-radius: 50%;
 }
+
 #status_light2
 {
 	position: fixed;
@@ -349,6 +356,16 @@ body
 	position: fixed;
 	width: 72px;
 	height: 364px;
+	top: 0px;
+	right: 0px;
+	background-color: #404040;
+}
+
+#status_holder_2
+{
+	position: fixed;
+	width: 72px;
+	height: 148px;
 	top: 0px;
 	right: 0px;
 	background-color: #404040;
