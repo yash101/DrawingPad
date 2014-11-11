@@ -1,13 +1,24 @@
 ::-webkit-scrollbar
 {
 	background-color: #98BF21;
-	width: 8px;
+	width: 16px;
 }
 
 ::-webkit-scrollbar-button
 {
 	background-color: blue;
-	height: 8px;
+	border: 1px solid #404040;
+	height: 16px;
+}
+
+::-webkit-scrollbar-button:hover
+{
+	background-color: green;
+}
+
+::-webkit-scrollbar-button:active
+{
+	background-color: #00EEA7;
 }
 
 ::-webkit-scrollbar-track
@@ -20,9 +31,24 @@
 	background-color: yellow;
 }
 
+::-webkit-scrollbar-track-piece:hover
+{
+	background-color: green;
+}
+
+::-webkit-scrollbar-track-piece:active
+{
+	background-color: #00EEA7;
+}
+
 ::-webkit-scrollbar-thumb
 {
 	background-color: #C6C6C6;
+}
+
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active
+{
+	background-color: #602571;
 }
 
 ::-webkit-scrollbar-corner
@@ -342,7 +368,32 @@ body
 
 #instructions_box:hover
 {
-	top: 8px;
+	right: 88px;
+	border: 4px solid red;
+}
+
+#home_box
+{
+	background-color: #404040;
+	position: fixed;
+	top: 0px;
+	left: 572px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 24px;
+	border: 4px solid #98BF21;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-ms-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+#home_box:hover
+{
+	left: 580px;
 	border: 4px solid red;
 }
 
@@ -355,6 +406,7 @@ body
 	right: 4px;
 	background-color: red;
 	border-radius: 50%;
+	display: none;
 }
 
 #status_light2
@@ -366,6 +418,7 @@ body
 	right: 4px;
 	background-color: red;
 	border-radius: 50%;
+	display: none;
 }
 #status_light3
 {
@@ -376,6 +429,7 @@ body
 	right: 4px;
 	background-color: red;
 	border-radius: 50%;
+	display: none;
 }
 #status_light4
 {
@@ -386,13 +440,15 @@ body
 	right: 4px;
 	background-color: red;
 	border-radius: 50%;
+	display: none;
 }
 
 #status_holder
 {
 	position: fixed;
 	width: 72px;
-	height: 364px;
+	/*height: 364px;*/
+	height: 80px;
 	top: 0px;
 	right: 0px;
 	background-color: #404040;
@@ -402,7 +458,8 @@ body
 {
 	position: fixed;
 	width: 72px;
-	height: 148px;
+/*	height: 148px;*/
+	height: 80px;
 	top: 0px;
 	right: 0px;
 	background-color: #404040;
@@ -413,7 +470,7 @@ body
 	position: fixed;
 	top: 44px;
 	left: 0px;
-	width: 64px;
+	width: 72px;
 	bottom: 40px;
 	background-color: #404040;
 
@@ -446,7 +503,7 @@ body
 	margin: 1px;
 	border-radius: 20%;
 
-	-webkit-transition: all .25s ease-in-out;
+	-webkit-transition: width height .25s ease-in-out;
 	-moz-transition: all .25s ease-in-out;
 	-ms-transition: all .25s ease-in-out;
 	-o-transition: all .25s ease-in-out;
@@ -455,12 +512,14 @@ body
 
 #palette:hover div
 {
+	margin: auto;
 	width: 96px;
 	height: 96px;
 }
 
 #palette div:hover
 {
+	margin: 8px;
 	border: 16px solid red;
 }
 

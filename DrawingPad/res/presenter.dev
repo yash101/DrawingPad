@@ -29,13 +29,14 @@
 				</select>
 			</div>
 			<div id="sharelink" onclick="javascript:getShareLink();">Share Session</div>
-			<div onclick="window.location.href = '/viewer';" onclick="javascript:toolTip('Presenter');">Viewer</div>
+			<div ondblclick="window.location.href = '/viewer';" onclick="javascript:loadInfo('Double Click to go to Viewer! All work will be lost!');" onmouseover="javascript:toolTip('Presenter');">Viewer</div>
 			<div style="background-color: red;" onmouseover="javascript:toolTip('Clear Whiteboard');" onclick="loadInfo('Double Click to Clear Canvas!');" ondblclick="javascript:clearBoard();">Clear</div>
 		</div>
 
 		<div id="palette" class="blinky_border" onmouseover="javascript:toolTip('Palette!');">
 		</div>
 
+		<div id="home_box" ondblclick="javascript:window.location.href='http://devyashis.me';">Home</div>
 		<div id="instructions_box" onclick="javascript:getInstructions()">Instructions</div>
 		<div id="mesbox">
 			<div id="mesbox_back" onclick="javascript:closeMessageBox();">X</div>
