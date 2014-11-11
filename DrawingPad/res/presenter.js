@@ -46,6 +46,7 @@ function toolTip(x)
 var zxy = false;
 function loadAJAXPost(location, data, callback)
 {
+	startSpinner();
 	if(zxy)
 	{
 		document.getElementById("status_light").style.backgroundColor = "blue";
@@ -71,12 +72,14 @@ function loadAJAXPost(location, data, callback)
 		{
 			callback(xhr.responseText);
 		}
+		closeSpinner();
 	};
 
 	xhr.onerror = function()
 	{
 		document.getElementById("servcon").style.backgroundColor = "red";
 		document.getElementById("status_light").style.backgroundColor = "red";
+		closeSpinner();
 	}
 
 	xhr.open("POST", location, true);
@@ -141,6 +144,7 @@ function getInstructions()
 window.onload = function()
 {
 //	context.lineCap = 'butt';
+	startSpinner();
 
 	loadAJAXPost("/instructions", "i=presenter", function(x)
 	{
@@ -214,6 +218,13 @@ window.onload = function()
 			document.getElementById("status_light4").style.backgroundColor = "DeepPink";
 		});
 	}
+
+	loadAJAXPost("/colorpicker", "&nocache=false", function(x)
+	{
+		document.getElementById("palette").innerHTML = x;
+	});
+
+	closeSpinner();
 };
 
 function getShareLink()
@@ -243,4 +254,15 @@ function closeInfo()
 	clearInterval(ibox);
 	var con = document.getElementById("infobox");
 	con.style.display = "none";
+}
+
+function startSpinner()
+{
+	var s = document.getElementById("spinner");
+	s.style.display = "block";
+}
+
+function closeSpinner()
+{
+	document.getElementById("spinner").style.display = "none";
 }

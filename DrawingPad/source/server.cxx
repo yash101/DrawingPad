@@ -107,6 +107,12 @@ const std::string paint_server::process_request(const dlib::incoming_things& inc
         }
     }
 
+    if(incoming.path == "/colorpicker")
+    {
+        outgoing.headers["Content-type"] = "text/plain";
+        return ramfs::filesystem.get_file_autocache("res/colorpicker.mdev");
+    }
+
     if(incoming.path.substr(0, 5) == "/r?i=")
     {
         std::stringstream str;
