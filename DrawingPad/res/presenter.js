@@ -18,6 +18,26 @@ function closeMessageBox()
 	document.getElementById("mesbox").style.OTransform = "translate(-150%, -150%) rotate(360deg)";	
 }
 
+function penColor(x)
+{
+	document.getElementById('penCol').value = x;
+	//loadInfo("Pen color changed to: " + x.style.backgroundColor);
+}
+
+function toHex(rgb)
+{
+	if(rgb.charAt[0] == '#')
+	{
+		return rgb;
+	}
+	rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	function hex(x)
+	{
+		return ("0" + parseInt(x).toString(16)).slice(-2);
+	}
+	return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
 function toolTip(x)
 {
 	document.getElementById("tooltip").innerHTML = x;
@@ -158,7 +178,7 @@ window.onload = function()
 			//Draw a rectangle
 			ctx.fillRect(canvasX - 2 - (document.getElementById("penRad").value / 2), canvasY - 2 - (document.getElementById("penRad").value / 2), document.getElementById("penRad").value, document.getElementById("penRad").value);
 			ctx.lineWidth = document.getElementById("penRad").value;
-			send = send + " begpath " + document.getElementById("tool").value + " " + document.getElementById("penCol").value + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
+			send = send + " begpath " + document.getElementById("tool").value + " " + encodeURI(document.getElementById("penCol").value) + " " + canvas.width + " " + canvas.height + " " + canvasX + " " + canvasY + " " + document.getElementById("penRad").value;
 		}).mousemove(function(e)
 		{
 			document.getElementById("status_light4").style.backgroundColor = "purple";

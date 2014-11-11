@@ -118,8 +118,8 @@ function parseRequest(c)
 			ctx.lineCap = cmd[i];
 
 			i++;
-			ctx.fillStyle = cmd[i];
-			ctx.strokeStyle = cmd[i];
+			ctx.fillStyle = decodeURI(cmd[i]);
+			ctx.strokeStyle = decodeURI(cmd[i]);
 
 			if(!heightSet)
 			{
