@@ -7,11 +7,19 @@
 		<script type="text/javascript" src="/viewer.js"></script>
 	</head>
 	<body>
-		<canvas id="main_canvas"></canvas>
+<!-- 		<canvas id="main_canvas"></canvas> -->
 		<p id="dbg">Debug goes here!</p>
 		<div id="link_presenter" onclick="window.location.href='/presenter';">Want to present?</div>
 		<div id="home_box" onclick="javascript:window.location.href='http://devyashis.me';">Home</div>
 		<div id="instructions_box" onclick="javascript:getInstructions()">Instructions</div>
+		<input type="text" placeholder="Session Name" id="sesname" onkeyup="javascript:sesname_change();"></input>
+		<div id="infobox">
+		</div>
+		<div id="status_holder_2" class="blinky_border">
+			<img id="servcon" src="/netcon.png" class="blinky_border"></img>
+			<div id="status_light" class="blinky_border"></div>
+		</div>
+		<canvas id="main_canvas"></canvas>
 		<div id="mesbox">
 			<div id="mesbox_back" onclick="javascript:closeMessageBox();"></div>
 			<div id="close_message_box" onclick="javascript:closeMessageBox();">X</div>
@@ -20,12 +28,6 @@
 				<div id="message_con">No messages here yet! :)</div>
 			</div>
 		</div>
-		<input type="text" placeholder="Session Name" id="sesname" onkeyup="javascript:sesname_change();"></input>
-		<div id="infobox">
-		</div>
-		<div id="status_holder_2" class="blinky_border">
-			<img id="servcon" src="/netcon.png" class="blinky_border"></img>
-			<div id="status_light" class="blinky_border"></div>
-		</div>
+		<div id="fullscreen-button" onclick="javascript:fullscreen();">Fullscreen</div>
 	</body>
 </html>

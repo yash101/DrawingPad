@@ -256,3 +256,24 @@ function closeInfo()
 	var con = document.getElementById("infobox");
 	con.style.display = "none";
 }
+
+var fscreen = false;
+function fullscreen()
+{
+	if(fscreen)
+	{
+		fscreen = false;
+		document.getElementById("main_canvas").style.top = "2%";
+		document.getElementById("main_canvas").style.left = "2%";
+		document.getElementById("main_canvas").style.width = "96%";
+		document.getElementById("main_canvas").style.height = "96%";
+	}
+	else
+	{
+		fscreen = true;
+		document.getElementById("main_canvas").style.top = "10%";
+		document.getElementById("main_canvas").style.left = "10%";
+		document.getElementById("main_canvas").style.width = "80%";
+		document.getElementById("main_canvas").style.height = "80%";
+	}
+}

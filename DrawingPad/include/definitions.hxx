@@ -14,8 +14,8 @@
 #define SIGHANDLE           true        //Whether to handle signals
 #define AUTOKILL            true        //Whether to kill old children or let them live! Sounds cannibalistic, right? :)
 
-//#define DEVELOPMENT_DEFAULTS
-#define DEPLOYMENT_DEFAULTS
+#define DEVELOPMENT_DEFAULTS
+//#define DEPLOYMENT_DEFAULTS
 
 //====================[VALIDATION]=====================
 //Some configuration settings.

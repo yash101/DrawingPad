@@ -10,7 +10,7 @@
 		<canvas id="main_canvas"></canvas>
 		<p id="dbg">Debug goes here!</p>
 		<div id="toolbox">
-			<div id="tooltip" style="min-width: 200px; text-align: center;">Tooltip!</div>
+			<div id="tooltip" style="min-width: 100px; text-align: center;">Tooltip!</div>
 			<div>
 				<input type="range" min="1" max="256" value="5" id="penRad" onmouseover="javascript:toolTip('Pen Size: ' + this.value);" onmousemove="javascript:toolTip('Pen Size: ' + this.value);">
 			</div>
