@@ -53,4 +53,5 @@ void read_configuration()
 void set_http_handlers()
 {
   server.defaultHostname().setStatic("(.*)", "Resources.Http");
+  server.defaultHostname().setStatic("/whiteboard", "Resources.Http/whiteboard.html");
 }

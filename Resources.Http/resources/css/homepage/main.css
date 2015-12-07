@@ -1,0 +1,28 @@
+body
+{
+  background-color: white;
+  color: rgb(85, 26, 139);
+}
+
+body > #topnav
+{
+  position: fixed;
+  top: 4px;
+  right: 4px;
+}
+
+body > #topnav > a
+{
+  display: inline-block;
+  padding: 16px;
+  background-color: #C6C6C6;
+  text-decoration: none;
+  font-size: 24px;
+  color: inherit;
+}
+
+body > #topnav > a:hover
+{
+  background-color: #D4208C;
+  color: white;
+}
